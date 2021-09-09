@@ -1,0 +1,35 @@
+version: '3'
+services:
+  soxfire:
+    build:
+      context: .
+      dockerfile: ./sox_dockerfile
+    ports:
+     - "9090:9090"   # admin port
+     - "5222:5222"   # Client Port
+     - "5223:5223"   # Client SSL Port
+     - "5280:5280"
+     - "5281:5281"
+     # add more according to your own requirement
+    restart: always # restart the service automatically
+    # links:
+    #  - dbserver:dbserver   # used to connect to mysql database
+
+  # dbserver:
+  #   image: "mysql:5.6"
+  #   restart: always   # restart the service automatically
+  #   ports:
+  #   - "3306:3306"
+  #   # tables are created by admin console
+  #   # volumes:
+  #   # - ./mysql:/var/lib/mysql
+  #   # - ./mysql/init:/docker-entrypoint-initdb.d
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: 'soxfire' # TODO: Change this
+  #     MYSQL_USER: soxfire            # TODO: Change this
+  #     MYSQL_PASSWORD: soxfire        # TODO: Change this
+  #     MYSQL_DATABASE: 'soxfiredb'
+
+# networks:
+#   drupal_mysql_net:
+#     driver: bridge

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  soxfire:
+    build:
+      context: .
+      dockerfile: ./sox_dockerfile
+    ports:
+     - "9090:9090"   # admin port
+     - "5222:5222"   # Client Port
+     - "5223:5223"   # Client SSL Port
+     - "5280:5280"
+     - "5281:5281"
+     # add more according to your own requirement
+    restart: always # restart the service automatically

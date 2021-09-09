@@ -1,0 +1,26 @@
+# Use an official openjdk11 and maven3
+FROM openjdk:8
+FROM maven:3-jdk-8
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the ./soxfire_src-1.0.3.zip into the container at /app
+COPY ./soxfire_src-2.0.0.zip /app
+
+# Installs soxfire
+ENV SOXFIRE_VERSION 2.0.0
+RUN apt install -y unzip && \
+    unzip -q soxfire_src-${SOXFIRE_VERSION}.zip -d . && \
+    mv soxfire_src /opt/soxfire && \
+    cd /opt/soxfire && \
+    mvn verify 
+
+ENV SOXFIRE_HOME /opt/soxfire
+ENV PATH ${PATH}:/opt/soxfire/distribution/target/distribution-base/bin
+
+# Make required ports available to the world outside this container
+EXPOSE 9090 5322 5323 5280 5281
+
+# Run openfire.sh when the container launches
+CMD ["openfire.sh"]
