@@ -1,4 +1,5 @@
 # Secure_SOXFire
+
 Information publishing platforms are very important currently because there are many and various data on all over the world by become popular IoT. 
 Like this, exceeding smart cities have happened the extreme generating data there.  
 In these backgrounds, we must prepare the platform to publish data efficiently to multiple clients.
