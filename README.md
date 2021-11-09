@@ -14,7 +14,7 @@ If you want to publish data from the complex sensor, you can realize it easily b
 The feature is shown in the following images.
 
 We use this to realize data streaming to various situations in the M-Sec project.
-<img width="1097" alt="soxstoreserver" src="https://user-images.githubusercontent.com/13267712/140929326-9c31e123-ab3e-484b-aa53-10c321147169.png">
+<img width="1426" alt="soxfire" src="https://user-images.githubusercontent.com/13267712/140930183-0af6e836-fc05-4b0e-9fc3-66e2416288d1.png">
 
 
 
